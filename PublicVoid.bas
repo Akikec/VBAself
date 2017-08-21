@@ -16,11 +16,11 @@ Sub makeZBMmenu()
     'add FTS menu if necessary
     BBMmenu = False
     For Each rmenu In MenuBars(xlWorksheet).Menus
-        If rmenu.Caption = "Запросы в Maconomy" Then ZBMmenu = True
+        If rmenu.Caption = "Р—Р°РїСЂРѕСЃС‹ РІ Maconomy" Then ZBMmenu = True
     Next rmenu
     
     If BBMmenu = False Then
-        Set NewItem = MenuBars(xlWorksheet).Menus.Add(Caption:="Запросы в Maconomy")
+        Set NewItem = MenuBars(xlWorksheet).Menus.Add(Caption:="Р—Р°РїСЂРѕСЃС‹ РІ Maconomy")
         addZBMitems
     End If
 
@@ -32,64 +32,64 @@ Sub makeBBMmenu()
     'add FTS menu if necessary
     BBMmenu = False
     For Each rmenu In MenuBars(xlWorksheet).Menus
-        If rmenu.Caption = "Макросы Продукт Менеджера" Then BBMmenu = True
+        If rmenu.Caption = "РњР°РєСЂРѕСЃС‹ РџСЂРѕРґСѓРєС‚ РњРµРЅРµРґР¶РµСЂР°" Then BBMmenu = True
     Next rmenu
     
     If BBMmenu = False Then
-        Set NewItem = MenuBars(xlWorksheet).Menus.Add(Caption:="Макросы Продукт Менеджера")
+        Set NewItem = MenuBars(xlWorksheet).Menus.Add(Caption:="РњР°РєСЂРѕСЃС‹ РџСЂРѕРґСѓРєС‚ РњРµРЅРµРґР¶РµСЂР°")
         addBBMitems
     End If
 
 End Sub
 Sub addZBMitems()
     Dim NewItem As Object
-    With MenuBars(xlWorksheet).Menus("Запросы в Maconomy").MenuItems
-        Set NewItem = .Add(Caption:="Запрос 'Замен'", OnAction:="UploadZam", Before:=5)
+    With MenuBars(xlWorksheet).Menus("Р—Р°РїСЂРѕСЃС‹ РІ Maconomy").MenuItems
+        Set NewItem = .Add(Caption:="Р—Р°РїСЂРѕСЃ 'Р—Р°РјРµРЅ'", OnAction:="UploadZam", Before:=5)
         
     End With
 End Sub
 
 Sub addBBMitems()
     Dim NewItem As Object
-    With MenuBars(xlWorksheet).Menus("Макросы Продукт Менеджера").MenuItems
-        Set NewItem = .Add(Caption:="Переименовать файлы", OnAction:="ConvertNewFileName", Before:=5)
-        Set NewItem = .Add(Caption:="F2+Enter(Выдел.)", OnAction:="RefreshCellsFE", Before:=5)
-        Set NewItem = .Add(Caption:="Лист скачивания картинок", OnAction:="CreateSheetForPictureDownload", Before:=5)
-        Set NewItem = .Add(Caption:="Подсчет файлов в папке", OnAction:="FilenamesCollectionSb", Before:=5)
-        Set NewItem = .Add(Caption:="Проверить Совпадения(Выдел.)", OnAction:="ПроверитьСовпадения", Before:=5)
-        Set NewItem = .Add(Caption:="Разделить столбец по слову(Выдел.)", OnAction:="РазделениеПоСтолбцам", Before:=5)
-        Set NewItem = .Add(Caption:="Скачать картинки с листа", OnAction:="Save_Object_As_Picture_NamesFromCells", Before:=5)
-        Set NewItem = .Add(Caption:="Дублеры", OnAction:="bb", Before:=5)
-        Set NewItem = .Add(Caption:="ГруппыДиапазоны", OnAction:="GroupStack", Before:=5)
-        ' уберают одинаковые значения и оставляют 1но (первое).
+    With MenuBars(xlWorksheet).Menus("РњР°РєСЂРѕСЃС‹ РџСЂРѕРґСѓРєС‚ РњРµРЅРµРґР¶РµСЂР°").MenuItems
+        Set NewItem = .Add(Caption:="РџРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ С„Р°Р№Р»С‹", OnAction:="ConvertNewFileName", Before:=5)
+        Set NewItem = .Add(Caption:="F2+Enter(Р’С‹РґРµР».)", OnAction:="RefreshCellsFE", Before:=5)
+        Set NewItem = .Add(Caption:="Р›РёСЃС‚ СЃРєР°С‡РёРІР°РЅРёСЏ РєР°СЂС‚РёРЅРѕРє", OnAction:="CreateSheetForPictureDownload", Before:=5)
+        Set NewItem = .Add(Caption:="РџРѕРґСЃС‡РµС‚ С„Р°Р№Р»РѕРІ РІ РїР°РїРєРµ", OnAction:="FilenamesCollectionSb", Before:=5)
+        Set NewItem = .Add(Caption:="РџСЂРѕРІРµСЂРёС‚СЊ РЎРѕРІРїР°РґРµРЅРёСЏ(Р’С‹РґРµР».)", OnAction:="РџСЂРѕРІРµСЂРёС‚СЊРЎРѕРІРїР°РґРµРЅРёСЏ", Before:=5)
+        Set NewItem = .Add(Caption:="Р Р°Р·РґРµР»РёС‚СЊ СЃС‚РѕР»Р±РµС† РїРѕ СЃР»РѕРІСѓ(Р’С‹РґРµР».)", OnAction:="Р Р°Р·РґРµР»РµРЅРёРµРџРѕРЎС‚РѕР»Р±С†Р°Рј", Before:=5)
+        Set NewItem = .Add(Caption:="РЎРєР°С‡Р°С‚СЊ РєР°СЂС‚РёРЅРєРё СЃ Р»РёСЃС‚Р°", OnAction:="Save_Object_As_Picture_NamesFromCells", Before:=5)
+        Set NewItem = .Add(Caption:="Р”СѓР±Р»РµСЂС‹", OnAction:="bb", Before:=5)
+        Set NewItem = .Add(Caption:="Р“СЂСѓРїРїС‹Р”РёР°РїР°Р·РѕРЅС‹", OnAction:="GroupStack", Before:=5)
+        ' СѓР±РµСЂР°СЋС‚ РѕРґРёРЅР°РєРѕРІС‹Рµ Р·РЅР°С‡РµРЅРёСЏ Рё РѕСЃС‚Р°РІР»СЏСЋС‚ 1РЅРѕ (РїРµСЂРІРѕРµ).
     
     End With
 End Sub
 
 Sub ConvertNewFileName()
     If Len(ActiveSheet.[a2]) = 0 Then Exit Sub
-    Dim V, Старое_имя$, Новое_имя$, Расширение$
-    For Each V In range(ActiveSheet.[a2], ActiveSheet.[A1].End(xlDown)) 'у таблицы должен быть заголовок
-        Старое_имя = V 'столбец "A"
+    Dim V, РЎС‚Р°СЂРѕРµ_РёРјСЏ$, РќРѕРІРѕРµ_РёРјСЏ$, Р Р°СЃС€РёСЂРµРЅРёРµ$
+    For Each V In range(ActiveSheet.[a2], ActiveSheet.[A1].End(xlDown)) 'Сѓ С‚Р°Р±Р»РёС†С‹ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ Р·Р°РіРѕР»РѕРІРѕРє
+        РЎС‚Р°СЂРѕРµ_РёРјСЏ = V 'СЃС‚РѕР»Р±РµС† "A"
         On Error Resume Next
-        Расширение = ".jpg"
-        Расширение = Mid(Старое_имя, InStrRev(Старое_имя, "."))
-        Новое_имя = V(1, 2) 'стобец "B"
-        'Подставляем старое расширение
-        Новое_имя = Left(Новое_имя, InStrRev(Новое_имя, ".") - 1) & Расширение
+        Р Р°СЃС€РёСЂРµРЅРёРµ = ".jpg"
+        Р Р°СЃС€РёСЂРµРЅРёРµ = Mid(РЎС‚Р°СЂРѕРµ_РёРјСЏ, InStrRev(РЎС‚Р°СЂРѕРµ_РёРјСЏ, "."))
+        РќРѕРІРѕРµ_РёРјСЏ = V(1, 2) 'СЃС‚РѕР±РµС† "B"
+        'РџРѕРґСЃС‚Р°РІР»СЏРµРј СЃС‚Р°СЂРѕРµ СЂР°СЃС€РёСЂРµРЅРёРµ
+        РќРѕРІРѕРµ_РёРјСЏ = Left(РќРѕРІРѕРµ_РёРјСЏ, InStrRev(РќРѕРІРѕРµ_РёРјСЏ, ".") - 1) & Р Р°СЃС€РёСЂРµРЅРёРµ
         Err.Clear
-        Name Старое_имя As Новое_имя
-        If Err <> 0 Then Debug.Print "ERROR: " & Старое_имя & " ---> " & Новое_имя
+        Name РЎС‚Р°СЂРѕРµ_РёРјСЏ As РќРѕРІРѕРµ_РёРјСЏ
+        If Err <> 0 Then Debug.Print "ERROR: " & РЎС‚Р°СЂРѕРµ_РёРјСЏ & " ---> " & РќРѕРІРѕРµ_РёРјСЏ
         On Error GoTo 0
     Next
-    MsgBox "Все файлы переименованы"
+    MsgBox "Р’СЃРµ С„Р°Р№Р»С‹ РїРµСЂРµРёРјРµРЅРѕРІР°РЅС‹"
 End Sub
 
 Sub RefreshCellsFE()
 Dim R As range, rr As range
 Set rr = Selection
 ' Selection.NumberFormat = "@"
-' If rr = 0 Then Debug.Print "ERROR: Выделите 1 столбец"
+' If rr = 0 Then Debug.Print "ERROR: Р’С‹РґРµР»РёС‚Рµ 1 СЃС‚РѕР»Р±РµС†"
 For Each R In rr
     Application.SendKeys "{F2}"
     Application.SendKeys "{ENTER}"
@@ -100,11 +100,11 @@ End Sub
 Sub CreateSheetForPictureDownload()
 Sheets.Add
 ActiveSheet.Name = "PictureDownload"
-    ActiveSheet.Cells(1, 1).Value = "Название внутреннеый папки"
+    ActiveSheet.Cells(1, 1).Value = "РќР°Р·РІР°РЅРёРµ РІРЅСѓС‚СЂРµРЅРЅРµС‹Р№ РїР°РїРєРё"
     Columns("A:A").ColumnWidth = 29.14
-    ActiveSheet.Cells(1, 2).Value = "Наименование файла"
+    ActiveSheet.Cells(1, 2).Value = "РќР°РёРјРµРЅРѕРІР°РЅРёРµ С„Р°Р№Р»Р°"
     Columns("B:B").ColumnWidth = 21.29
-    ActiveSheet.Cells(1, 3).Value = "Ссылка"
+    ActiveSheet.Cells(1, 3).Value = "РЎСЃС‹Р»РєР°"
     Columns("C:C").ColumnWidth = 39.57
     range("A1:C1").Select
     Selection.Font.Bold = True
@@ -117,12 +117,12 @@ ActiveSheet.Name = "PictureDownload"
     End With
     
     ActiveSheet.Buttons.Add(500, 8.25, 123.75, 30.75).Select
-    Selection.OnAction = "ОсновнойМакрос"
+    Selection.OnAction = "РћСЃРЅРѕРІРЅРѕР№РњР°РєСЂРѕСЃ"
      ActiveSheet.Shapes.range(Array("Button 1")).Select
-    Selection.Characters.Text = "Запуск"
+    Selection.Characters.Text = "Р—Р°РїСѓСЃРє"
     With Selection.Characters(Start:=1, Length:=6).Font
         .Name = "Calibri"
-        .FontStyle = "обычный"
+        .FontStyle = "РѕР±С‹С‡РЅС‹Р№"
         .Size = 11
         .Strikethrough = False
         .Superscript = False
@@ -135,61 +135,61 @@ ActiveSheet.Name = "PictureDownload"
 End Sub
 
 Sub FilenamesCollectionSb()
-    ' Ищем на рабочем столе все файлы TXT, и выводим на лист список их имён.
-    ' Просматриваются папки с глубиной вложения не более трёх.
+    ' РС‰РµРј РЅР° СЂР°Р±РѕС‡РµРј СЃС‚РѕР»Рµ РІСЃРµ С„Р°Р№Р»С‹ TXT, Рё РІС‹РІРѕРґРёРј РЅР° Р»РёСЃС‚ СЃРїРёСЃРѕРє РёС… РёРјС‘РЅ.
+    ' РџСЂРѕСЃРјР°С‚СЂРёРІР°СЋС‚СЃСЏ РїР°РїРєРё СЃ РіР»СѓР±РёРЅРѕР№ РІР»РѕР¶РµРЅРёСЏ РЅРµ Р±РѕР»РµРµ С‚СЂС‘С….
 
-    Dim coll As Collection, ПутьКПапке, Формат As String
-    ' получаем путь к папке РАБОЧИЙ СТОЛ
-    ПутьКПапке = InputBox("Пример : C:\Users\Vasya\Desktop\Google картинки", "Введите путь к папке")
+    Dim coll As Collection, РџСѓС‚СЊРљРџР°РїРєРµ, Р¤РѕСЂРјР°С‚ As String
+    ' РїРѕР»СѓС‡Р°РµРј РїСѓС‚СЊ Рє РїР°РїРєРµ Р РђР‘РћР§РР™ РЎРўРћР›
+    РџСѓС‚СЊРљРџР°РїРєРµ = InputBox("РџСЂРёРјРµСЂ : C:\Users\Vasya\Desktop\Google РєР°СЂС‚РёРЅРєРё", "Р’РІРµРґРёС‚Рµ РїСѓС‚СЊ Рє РїР°РїРєРµ")
     ' CreateObject("WScript.Shell").SpecialFolders ("Desktop")
-    ' считываем в колекцию coll нужные имена файлов
-    Формат = InputBox("Пример : .xls , .txt , .exe", "Введите формат искомого файла", ".jpg")
-    Set coll = FilenamesCollection(ПутьКПапке, Формат, 1)
+    ' СЃС‡РёС‚С‹РІР°РµРј РІ РєРѕР»РµРєС†РёСЋ coll РЅСѓР¶РЅС‹Рµ РёРјРµРЅР° С„Р°Р№Р»РѕРІ
+    Р¤РѕСЂРјР°С‚ = InputBox("РџСЂРёРјРµСЂ : .xls , .txt , .exe", "Р’РІРµРґРёС‚Рµ С„РѕСЂРјР°С‚ РёСЃРєРѕРјРѕРіРѕ С„Р°Р№Р»Р°", ".jpg")
+    Set coll = FilenamesCollection(РџСѓС‚СЊРљРџР°РїРєРµ, Р¤РѕСЂРјР°С‚, 1)
 
-    Application.ScreenUpdating = False    ' отключаем обновление экрана
-    ' создаём новую книгу
+    Application.ScreenUpdating = False    ' РѕС‚РєР»СЋС‡Р°РµРј РѕР±РЅРѕРІР»РµРЅРёРµ СЌРєСЂР°РЅР°
+    ' СЃРѕР·РґР°С‘Рј РЅРѕРІСѓСЋ РєРЅРёРіСѓ
     Dim sh As Worksheet: Set sh = Workbooks.Add.Worksheets(1)
-    ' формируем заголовки таблицы
+    ' С„РѕСЂРјРёСЂСѓРµРј Р·Р°РіРѕР»РѕРІРєРё С‚Р°Р±Р»РёС†С‹
     With sh.range("a1").Resize(, 3)
-        .Value = Array("№", "Имя файла", "Полный путь")
+        .Value = Array("в„–", "РРјСЏ С„Р°Р№Р»Р°", "РџРѕР»РЅС‹Р№ РїСѓС‚СЊ")
         .Font.Bold = True: .Interior.ColorIndex = 17
     End With
 
-    ' выводим результаты на лист
-    For i = 1 To coll.Count ' перебираем все элементы коллекции, содержащей пути к файлам
+    ' РІС‹РІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚С‹ РЅР° Р»РёСЃС‚
+    For i = 1 To coll.Count ' РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РєРѕР»Р»РµРєС†РёРё, СЃРѕРґРµСЂР¶Р°С‰РµР№ РїСѓС‚Рё Рє С„Р°Р№Р»Р°Рј
         sh.range("a" & sh.Rows.Count).End(xlUp).Offset(1).Resize(, 3).Value = _
-        Array(i, Dir(coll(i)), coll(i))    ' выводим на лист очередную строку
-        DoEvents    ' временно передаём управление ОС
+        Array(i, Dir(coll(i)), coll(i))    ' РІС‹РІРѕРґРёРј РЅР° Р»РёСЃС‚ РѕС‡РµСЂРµРґРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+        DoEvents    ' РІСЂРµРјРµРЅРЅРѕ РїРµСЂРµРґР°С‘Рј СѓРїСЂР°РІР»РµРЅРёРµ РћРЎ
     Next
-    sh.range("a:c").EntireColumn.AutoFit    ' автоподбор ширины столбцов
-    [a2].Activate: ActiveWindow.FreezePanes = True ' закрепляем первую строку листа
+    sh.range("a:c").EntireColumn.AutoFit    ' Р°РІС‚РѕРїРѕРґР±РѕСЂ С€РёСЂРёРЅС‹ СЃС‚РѕР»Р±С†РѕРІ
+    [a2].Activate: ActiveWindow.FreezePanes = True ' Р·Р°РєСЂРµРїР»СЏРµРј РїРµСЂРІСѓСЋ СЃС‚СЂРѕРєСѓ Р»РёСЃС‚Р°
 End Sub
 
-' Сюда вствлять новый Саб, для высплыв. Окна.
+' РЎСЋРґР° РІСЃС‚РІР»СЏС‚СЊ РЅРѕРІС‹Р№ РЎР°Р±, РґР»СЏ РІС‹СЃРїР»С‹РІ. РћРєРЅР°.
 
-Function СцепитьМного(Диапазон As range, Optional Разделитель As String = " ", Optional БезПовторов As Boolean = False)
+Function РЎС†РµРїРёС‚СЊРњРЅРѕРіРѕ(Р”РёР°РїР°Р·РѕРЅ As range, Optional Р Р°Р·РґРµР»РёС‚РµР»СЊ As String = " ", Optional Р‘РµР·РџРѕРІС‚РѕСЂРѕРІ As Boolean = False)
     Dim avData, lr As Long, lc As Long, sRes As String
-    avData = Диапазон.Value
+    avData = Р”РёР°РїР°Р·РѕРЅ.Value
     If Not IsArray(avData) Then
-        СцепитьМного = avData
+        РЎС†РµРїРёС‚СЊРњРЅРѕРіРѕ = avData
         Exit Function
     End If
  
     For lc = 1 To UBound(avData, 2)
         For lr = 1 To UBound(avData, 1)
             If Len(avData(lr, lc)) Then
-                sRes = sRes & Разделитель & avData(lr, lc)
+                sRes = sRes & Р Р°Р·РґРµР»РёС‚РµР»СЊ & avData(lr, lc)
             End If
         Next lr
     Next lc
     If Len(sRes) Then
-        sRes = Mid(sRes, Len(Разделитель) + 1)
+        sRes = Mid(sRes, Len(Р Р°Р·РґРµР»РёС‚РµР»СЊ) + 1)
     End If
     
-    If БезПовторов Then
+    If Р‘РµР·РџРѕРІС‚РѕСЂРѕРІ Then
         Dim oDict As Object, sTmpStr
         Set oDict = CreateObject("Scripting.Dictionary")
-        sTmpStr = Split(sRes, Разделитель)
+        sTmpStr = Split(sRes, Р Р°Р·РґРµР»РёС‚РµР»СЊ)
         On Error Resume Next
         For lr = LBound(sTmpStr) To UBound(sTmpStr)
             oDict.Add sTmpStr(lr), sTmpStr(lr)
@@ -197,38 +197,38 @@ Function СцепитьМного(Диапазон As range, Optional Разделитель As String = " ", O
         sRes = ""
         sTmpStr = oDict.keys
         For lr = LBound(sTmpStr) To UBound(sTmpStr)
-            sRes = sRes & IIf(sRes <> "", Разделитель, "") & sTmpStr(lr)
+            sRes = sRes & IIf(sRes <> "", Р Р°Р·РґРµР»РёС‚РµР»СЊ, "") & sTmpStr(lr)
         Next lr
     End If
-    СцепитьМного = sRes
+    РЎС†РµРїРёС‚СЊРњРЅРѕРіРѕ = sRes
 End Function
 
-Function ЦветПодтверждения(ЯчейкаПроверки1 As range, ЯчейкаПроверки2 As range)
+Function Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ(РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё1 As range, РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё2 As range)
 Application.Volatile True
-If ЯчейкаПроверки1.Interior.Color = 65535 And ЯчейкаПроверки2.Interior.Color = 65535 And ЯчейкаПроверки1 <> "-" And ЯчейкаПроверки2 <> "-" Then
-ЦветПодтверждения = "Подтвержден/Подтвержден"
+If РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё1.Interior.Color = 65535 And РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё2.Interior.Color = 65535 And РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё1 <> "-" And РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё2 <> "-" Then
+Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "РџРѕРґС‚РІРµСЂР¶РґРµРЅ/РџРѕРґС‚РІРµСЂР¶РґРµРЅ"
 Else
-    If ЯчейкаПроверки1.Interior.Color = 65535 And ЯчейкаПроверки1 <> "-" Then
-        If ЯчейкаПроверки2 = "-" Then
-            ЦветПодтверждения = "Подтвержден/-"
+    If РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё1.Interior.Color = 65535 And РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё1 <> "-" Then
+        If РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё2 = "-" Then
+            Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "РџРѕРґС‚РІРµСЂР¶РґРµРЅ/-"
         Else
-            ЦветПодтверждения = "Подтвержден/Не подтвержден"
+            Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "РџРѕРґС‚РІРµСЂР¶РґРµРЅ/РќРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅ"
         End If
     Else
-        If ЯчейкаПроверки2.Interior.Color = 65535 And ЯчейкаПроверки2 <> "-" Then
-            If ЯчейкаПроверки1 = "-" Then
-                ЦветПодтверждения = "-/Подтвержден"
+        If РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё2.Interior.Color = 65535 And РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё2 <> "-" Then
+            If РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё1 = "-" Then
+                Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "-/РџРѕРґС‚РІРµСЂР¶РґРµРЅ"
             Else
-                ЦветПодтверждения = "Не подтвержден/Подтвержден"
+                Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "РќРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅ/РџРѕРґС‚РІРµСЂР¶РґРµРЅ"
             End If
         Else
-            If ЯчейкаПроверки1 = "-" Then
-                ЦветПодтверждения = "-/Не подтвержден"
+            If РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё1 = "-" Then
+                Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "-/РќРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅ"
             Else
-                If ЯчейкаПроверки2 = "-" Then
-                    ЦветПодтверждения = "Не подтвержден/-"
+                If РЇС‡РµР№РєР°РџСЂРѕРІРµСЂРєРё2 = "-" Then
+                    Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "РќРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅ/-"
                 Else
-                    ЦветПодтверждения = "Не подтвержден/Не подтвержден"
+                    Р¦РІРµС‚РџРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ = "РќРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅ/РќРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅ"
                 End If
             End If
         
@@ -238,68 +238,68 @@ End If
 
 End Function
 
-Public Function ИзвлечьГиперссылку(ByVal range As range) As String
+Public Function РР·РІР»РµС‡СЊР“РёРїРµСЂСЃСЃС‹Р»РєСѓ(ByVal range As range) As String
  If (range.Hyperlinks.Count > 0) Then
- ИзвлечьГиперссылку = range.Hyperlinks(1).Address
+ РР·РІР»РµС‡СЊР“РёРїРµСЂСЃСЃС‹Р»РєСѓ = range.Hyperlinks(1).Address
  Else
- ИзвлечьГиперссылку = ""
+ РР·РІР»РµС‡СЊР“РёРїРµСЂСЃСЃС‹Р»РєСѓ = ""
  End If
  End Function
 
 Function FilenamesCollection(ByVal FolderPath As String, Optional ByVal Mask As String = "", _
                              Optional ByVal SearchDeep As Long = 999) As Collection
-    ' Получает в качестве параметра путь к папке FolderPath,
-    ' маску имени искомых файлов Mask (будут отобраны только файлы с такой маской/расширением)
-    ' и глубину поиска SearchDeep в подпапках (если SearchDeep=1, то подпапки не просматриваются).
-    ' Возвращает коллекцию, содержащую полные пути найденных файлов
-    ' (применяется рекурсивный вызов процедуры GetAllFileNamesUsingFSO)
+    ' РџРѕР»СѓС‡Р°РµС‚ РІ РєР°С‡РµСЃС‚РІРµ РїР°СЂР°РјРµС‚СЂР° РїСѓС‚СЊ Рє РїР°РїРєРµ FolderPath,
+    ' РјР°СЃРєСѓ РёРјРµРЅРё РёСЃРєРѕРјС‹С… С„Р°Р№Р»РѕРІ Mask (Р±СѓРґСѓС‚ РѕС‚РѕР±СЂР°РЅС‹ С‚РѕР»СЊРєРѕ С„Р°Р№Р»С‹ СЃ С‚Р°РєРѕР№ РјР°СЃРєРѕР№/СЂР°СЃС€РёСЂРµРЅРёРµРј)
+    ' Рё РіР»СѓР±РёРЅСѓ РїРѕРёСЃРєР° SearchDeep РІ РїРѕРґРїР°РїРєР°С… (РµСЃР»Рё SearchDeep=1, С‚Рѕ РїРѕРґРїР°РїРєРё РЅРµ РїСЂРѕСЃРјР°С‚СЂРёРІР°СЋС‚СЃСЏ).
+    ' Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»Р»РµРєС†РёСЋ, СЃРѕРґРµСЂР¶Р°С‰СѓСЋ РїРѕР»РЅС‹Рµ РїСѓС‚Рё РЅР°Р№РґРµРЅРЅС‹С… С„Р°Р№Р»РѕРІ
+    ' (РїСЂРёРјРµРЅСЏРµС‚СЃСЏ СЂРµРєСѓСЂСЃРёРІРЅС‹Р№ РІС‹Р·РѕРІ РїСЂРѕС†РµРґСѓСЂС‹ GetAllFileNamesUsingFSO)
 
-    Set FilenamesCollection = New Collection    ' создаём пустую коллекцию
-    Set FSO = CreateObject("Scripting.FileSystemObject")    ' создаём экземпляр FileSystemObject
-    GetAllFileNamesUsingFSO FolderPath, Mask, FSO, FilenamesCollection, SearchDeep ' поиск
-    Set FSO = Nothing: Application.StatusBar = False    ' очистка строки состояния Excel
+    Set FilenamesCollection = New Collection    ' СЃРѕР·РґР°С‘Рј РїСѓСЃС‚СѓСЋ РєРѕР»Р»РµРєС†РёСЋ
+    Set FSO = CreateObject("Scripting.FileSystemObject")    ' СЃРѕР·РґР°С‘Рј СЌРєР·РµРјРїР»СЏСЂ FileSystemObject
+    GetAllFileNamesUsingFSO FolderPath, Mask, FSO, FilenamesCollection, SearchDeep ' РїРѕРёСЃРє
+    Set FSO = Nothing: Application.StatusBar = False    ' РѕС‡РёСЃС‚РєР° СЃС‚СЂРѕРєРё СЃРѕСЃС‚РѕСЏРЅРёСЏ Excel
 End Function
 
 Function GetAllFileNamesUsingFSO(ByVal FolderPath As String, ByVal Mask As String, ByRef FSO, _
                                  ByRef FileNamesColl As Collection, ByVal SearchDeep As Long)
-    ' перебирает все файлы и подпапки в папке FolderPath, используя объект FSO
-    ' перебор папок осуществляется в том случае, если SearchDeep > 1
-    ' добавляет пути найденных файлов в коллекцию FileNamesColl
+    ' РїРµСЂРµР±РёСЂР°РµС‚ РІСЃРµ С„Р°Р№Р»С‹ Рё РїРѕРґРїР°РїРєРё РІ РїР°РїРєРµ FolderPath, РёСЃРїРѕР»СЊР·СѓСЏ РѕР±СЉРµРєС‚ FSO
+    ' РїРµСЂРµР±РѕСЂ РїР°РїРѕРє РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ РІ С‚РѕРј СЃР»СѓС‡Р°Рµ, РµСЃР»Рё SearchDeep > 1
+    ' РґРѕР±Р°РІР»СЏРµС‚ РїСѓС‚Рё РЅР°Р№РґРµРЅРЅС‹С… С„Р°Р№Р»РѕРІ РІ РєРѕР»Р»РµРєС†РёСЋ FileNamesColl
     On Error Resume Next: Set curfold = FSO.GetFolder(FolderPath)
-    If Not curfold Is Nothing Then    ' если удалось получить доступ к папке
+    If Not curfold Is Nothing Then    ' РµСЃР»Рё СѓРґР°Р»РѕСЃСЊ РїРѕР»СѓС‡РёС‚СЊ РґРѕСЃС‚СѓРї Рє РїР°РїРєРµ
 
-        ' раскомментируйте эту строку для вывода пути к просматриваемой
-        ' в текущий момент папке в строку состояния Excel
-        Application.StatusBar = "Поиск в папке: " & FolderPath
+        ' СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂСѓР№С‚Рµ СЌС‚Сѓ СЃС‚СЂРѕРєСѓ РґР»СЏ РІС‹РІРѕРґР° РїСѓС‚Рё Рє РїСЂРѕСЃРјР°С‚СЂРёРІР°РµРјРѕР№
+        ' РІ С‚РµРєСѓС‰РёР№ РјРѕРјРµРЅС‚ РїР°РїРєРµ РІ СЃС‚СЂРѕРєСѓ СЃРѕСЃС‚РѕСЏРЅРёСЏ Excel
+        Application.StatusBar = "РџРѕРёСЃРє РІ РїР°РїРєРµ: " & FolderPath
 
-        For Each fil In curfold.Files    ' перебираем все файлы в папке FolderPath
+        For Each fil In curfold.Files    ' РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ С„Р°Р№Р»С‹ РІ РїР°РїРєРµ FolderPath
             If fil.Name Like "*" & Mask Then FileNamesColl.Add fil.Path
         Next
-        SearchDeep = SearchDeep - 1    ' уменьшаем глубину поиска в подпапках
-        If SearchDeep Then    ' если надо искать глубже
-            For Each sfol In curfold.SubFolders    ' ' перебираем все подпапки в папке FolderPath
+        SearchDeep = SearchDeep - 1    ' СѓРјРµРЅСЊС€Р°РµРј РіР»СѓР±РёРЅСѓ РїРѕРёСЃРєР° РІ РїРѕРґРїР°РїРєР°С…
+        If SearchDeep Then    ' РµСЃР»Рё РЅР°РґРѕ РёСЃРєР°С‚СЊ РіР»СѓР±Р¶Рµ
+            For Each sfol In curfold.SubFolders    ' ' РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ РїРѕРґРїР°РїРєРё РІ РїР°РїРєРµ FolderPath
                 GetAllFileNamesUsingFSO sfol.Path, Mask, FSO, FileNamesColl, SearchDeep
             Next
         End If
-        Set fil = Nothing: Set curfold = Nothing    ' очищаем переменные
+        Set fil = Nothing: Set curfold = Nothing    ' РѕС‡РёС‰Р°РµРј РїРµСЂРµРјРµРЅРЅС‹Рµ
     End If
 End Function
 
-Sub ПроверитьСовпадения()
+Sub РџСЂРѕРІРµСЂРёС‚СЊРЎРѕРІРїР°РґРµРЅРёСЏ()
 Dim SearchString, CCC, NewCreation
 Const ForReading = 1
 Dim objFSO, objTextFile, a, b, c, i&
     c = 1
     Dim pi As New ProgressIndicator
-    pi.Show "Поиск подходящих синонимов"
+    pi.Show "РџРѕРёСЃРє РїРѕРґС…РѕРґСЏС‰РёС… СЃРёРЅРѕРЅРёРјРѕРІ"
 Set objFSO = CreateObject("Scripting.FileSystemObject")
-Set objTextFile = objFSO.OpenTextFile("Z:\Market\ПМ\ПМ\AnSwitch.txt", ForReading)
+Set objTextFile = objFSO.OpenTextFile("Z:\Market\РџРњ\РџРњ\AnSwitch.txt", ForReading)
 a = Split(objTextFile.ReadAll, vbNewLine)
 objTextFile.Close
 Set objTextFile = Nothing
 Set SearchString = Selection
 NewCreation = True
-pi.StartNewAction 0, 100, "Поиск совпадений", , , SearchString.Count
+pi.StartNewAction 0, 100, "РџРѕРёСЃРє СЃРѕРІРїР°РґРµРЅРёР№", , , SearchString.Count
 For Each CCC In SearchString
     If CCC.Cells.Value <> 0 Then
     If CCC.Cells(1, 2).Value <> 0 Then
@@ -321,39 +321,39 @@ For Each CCC In SearchString
                 End If
             End If
             If i = UBound(a) - 1 And CCC.Cells(1, 2).Value = 0 Then
-                CCC.Cells(1, 2).Value = "Нет Совпадений"
+                CCC.Cells(1, 2).Value = "РќРµС‚ РЎРѕРІРїР°РґРµРЅРёР№"
             End If
         Next
     End If
     End If
-    pi.SubAction , "Обрабатывается ячейка " & c & " из " & SearchString.Count
+    pi.SubAction , "РћР±СЂР°Р±Р°С‚С‹РІР°РµС‚СЃСЏ СЏС‡РµР№РєР° " & c & " РёР· " & SearchString.Count
     c = c + 1
 NewCreation = False
 Next
 pi.Hide
 End Sub
 
-Sub РазделениеПоСтолбцам()
+Sub Р Р°Р·РґРµР»РµРЅРёРµРџРѕРЎС‚РѕР»Р±С†Р°Рј()
 Dim SearchString, CCC, NewCreation
-Dim СловоПоиска
+Dim РЎР»РѕРІРѕРџРѕРёСЃРєР°
 Const ForReading = 1
 Dim x, y, z, c
     c = 1
 'Dim pi As New ProgressIndicator
-'pi.Show "Поиск подходящих синонимов"
+'pi.Show "РџРѕРёСЃРє РїРѕРґС…РѕРґСЏС‰РёС… СЃРёРЅРѕРЅРёРјРѕРІ"
 
-СловоПоиска = InputBox("Введите слово для поиска", " ")
-x = Len(СловоПоиска)
+РЎР»РѕРІРѕРџРѕРёСЃРєР° = InputBox("Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РґР»СЏ РїРѕРёСЃРєР°", " ")
+x = Len(РЎР»РѕРІРѕРџРѕРёСЃРєР°)
 
 Set SearchString = Selection
-'pi.StartNewAction 0, 100, "Поиск совпадений", , , SearchString.Count
+'pi.StartNewAction 0, 100, "РџРѕРёСЃРє СЃРѕРІРїР°РґРµРЅРёР№", , , SearchString.Count
 
 For Each CCC In SearchString
     If CCC.Cells.Value <> 0 Then
     If CCC.Cells(1, 2).Value <> 0 Then
     Else
     y = Len(CCC.Cells.Value)
-    Pos = InStr(CCC.Cells.Value, СловоПоиска)
+    Pos = InStr(CCC.Cells.Value, РЎР»РѕРІРѕРџРѕРёСЃРєР°)
     If Pos <> 0 Then
     z = Left(CCC.Cells.Value, Pos + x)
     CCC.Cells(1, 2).Value = Right(CCC.Cells.Value, y - (Pos + x))
@@ -362,7 +362,7 @@ For Each CCC In SearchString
     End If
     End If
     End If
-    'pi.SubAction , "Обрабатывается ячейка " & c & " из " & SearchString.Count
+    'pi.SubAction , "РћР±СЂР°Р±Р°С‚С‹РІР°РµС‚СЃСЏ СЏС‡РµР№РєР° " & c & " РёР· " & SearchString.Count
     'c = c + 1
 
 Next
@@ -375,8 +375,8 @@ Sub Save_Object_As_Picture_NamesFromCells()
     Dim sImagesPath As String, sName As String
     Dim lNamesCol As Long, s As String
     
-    s = InputBox("Укажите номер столбца с именами для картинок" & vbNewLine & _
-                 "(0 - столбец в котором сама картинка)", "www.excel-vba.ru", "")
+    s = InputBox("РЈРєР°Р¶РёС‚Рµ РЅРѕРјРµСЂ СЃС‚РѕР»Р±С†Р° СЃ РёРјРµРЅР°РјРё РґР»СЏ РєР°СЂС‚РёРЅРѕРє" & vbNewLine & _
+                 "(0 - СЃС‚РѕР»Р±РµС† РІ РєРѕС‚РѕСЂРѕРј СЃР°РјР° РєР°СЂС‚РёРЅРєР°)", "www.excel-vba.ru", "")
     If StrPtr(s) = 0 Then Exit Sub
     lNamesCol = Val(s)
     
@@ -397,10 +397,10 @@ Sub Save_Object_As_Picture_NamesFromCells()
             Else
                 sName = wsSh.Cells(oObj.TopLeftCell.row, lNamesCol).Value
             End If
-            'если в ячейке были символы, запрещенные
-            'для использования в качестве имен для файлов - удаляем
+            'РµСЃР»Рё РІ СЏС‡РµР№РєРµ Р±С‹Р»Рё СЃРёРјРІРѕР»С‹, Р·Р°РїСЂРµС‰РµРЅРЅС‹Рµ
+            'РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РІ РєР°С‡РµСЃС‚РІРµ РёРјРµРЅ РґР»СЏ С„Р°Р№Р»РѕРІ - СѓРґР°Р»СЏРµРј
             sName = CheckName(sName)
-            'если sName в результате пусто - даем имя unnamed_ с порядковым номером
+            'РµСЃР»Рё sName РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ РїСѓСЃС‚Рѕ - РґР°РµРј РёРјСЏ unnamed_ СЃ РїРѕСЂСЏРґРєРѕРІС‹Рј РЅРѕРјРµСЂРѕРј
             If sName = "" Then
                 li = li + 1
                 sName = "unnamed_" & li
@@ -417,11 +417,11 @@ Sub Save_Object_As_Picture_NamesFromCells()
     wsTmpSh.Delete
     Application.DisplayAlerts = True
     Application.ScreenUpdating = True
-    MsgBox "Объекты сохранены в папке: " & sImagesPath, vbInformation, "www.excel-vba.ru"
+    MsgBox "РћР±СЉРµРєС‚С‹ СЃРѕС…СЂР°РЅРµРЅС‹ РІ РїР°РїРєРµ: " & sImagesPath, vbInformation, "www.excel-vba.ru"
 End Sub
 '---------------------------------------------------------------------------------------
 ' Procedure : CheckName
-' Purpose   : Функция проверки правильности имени
+' Purpose   : Р¤СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РёРјРµРЅРё
 '---------------------------------------------------------------------------------------
 Function CheckName(sName As String)
     Dim objRegExp As Object
@@ -434,29 +434,29 @@ Function CheckName(sName As String)
 End Function
 
 Sub GroupStack()
-Dim СтолбецГрупп, Cre, LastGroup, i As Long
-Dim МРЦ, СК, Art, GroupSel
+Dim РЎС‚РѕР»Р±РµС†Р“СЂСѓРїРї, Cre, LastGroup, i As Long
+Dim РњР Р¦, РЎРљ, Art, GroupSel
 Dim Rng As range
 
-'Set СтолбецГрупп = Selection
+'Set РЎС‚РѕР»Р±РµС†Р“СЂСѓРїРї = Selection
 'Mycount = Selection.Count
 
 'Set Rng = range(Cells(Art.Cells.row + i, 4), GroupSel.Cells(1, 4))
 
 On Error Resume Next
 Set Art = Application.InputBox _
-(prompt:="Выбрать Артикул:", Type:=8)
+(prompt:="Р’С‹Р±СЂР°С‚СЊ РђСЂС‚РёРєСѓР»:", Type:=8)
 If Art Is Nothing Then Exit Sub
 
 On Error Resume Next
-Set МРЦ = Application.InputBox _
-(prompt:="Выбрать РОЦ1:", Type:=8)
-If МРЦ Is Nothing Then Exit Sub
+Set РњР Р¦ = Application.InputBox _
+(prompt:="Р’С‹Р±СЂР°С‚СЊ Р РћР¦1:", Type:=8)
+If РњР Р¦ Is Nothing Then Exit Sub
 
 On Error Resume Next
-Set СК = Application.InputBox _
-(prompt:="Выбрать Скидку клиента:", Type:=8)
-If СК Is Nothing Then Exit Sub
+Set РЎРљ = Application.InputBox _
+(prompt:="Р’С‹Р±СЂР°С‚СЊ РЎРєРёРґРєСѓ РєР»РёРµРЅС‚Р°:", Type:=8)
+If РЎРљ Is Nothing Then Exit Sub
 
 Art.Cells(1, 2).EntireColumn.Insert
 Art.Cells(1, 2).EntireColumn.Insert
@@ -468,7 +468,7 @@ Do While GroupSel <> 0
     If GroupSel.Cells(1, 2).Value = 0 Then
         LastGroup = GroupSel.Value
     Else
-        GroupSel.Cells(1, 3).Value = LastGroup & " " & GroupSel.Cells(1, МРЦ.Cells.Column).Value & " " & GroupSel.Cells(1, СК.Cells.Column).Value
+        GroupSel.Cells(1, 3).Value = LastGroup & " " & GroupSel.Cells(1, РњР Р¦.Cells.Column).Value & " " & GroupSel.Cells(1, РЎРљ.Cells.Column).Value
     End If
     i = i + 1
     Set GroupSel = Cells(Art.Cells.row + i, 1)
@@ -490,12 +490,12 @@ With Selection
     Selection.UnMerge
 
 range(Cells(Art.Cells.row + 3, Art.Cells.Column + 1), GroupSel.Cells(1, Art.Cells.Column + 1)).Select
-ПроверитьСовпадения
+РџСЂРѕРІРµСЂРёС‚СЊРЎРѕРІРїР°РґРµРЅРёСЏ
 End Sub
 
 
 
-'ZBM Макросы:
+'ZBM РњР°РєСЂРѕСЃС‹:
 Sub UploadZam()
 Dim sql As String, item As String
 Dim R As range
@@ -597,7 +597,7 @@ ActiveWindow.RangeSelection.Rows.Cells(1, 2).EntireColumn.Insert
                 
                     If i = 15 Then
                         theEnd = True
-                        R.Cells(1, i + 1).Value = "Больше 15 повторений"
+                        R.Cells(1, i + 1).Value = "Р‘РѕР»СЊС€Рµ 15 РїРѕРІС‚РѕСЂРµРЅРёР№"
                     End If
                 
                 Else
@@ -635,19 +635,19 @@ Sub CombineWorkbooks()
     Dim FilesToOpen
     Dim x As Integer
  
-    Application.ScreenUpdating = False  'отключаем обновление экрана для скорости
+    Application.ScreenUpdating = False  'РѕС‚РєР»СЋС‡Р°РµРј РѕР±РЅРѕРІР»РµРЅРёРµ СЌРєСЂР°РЅР° РґР»СЏ СЃРєРѕСЂРѕСЃС‚Рё
      
-    'вызываем диалог выбора файлов для импорта
+    'РІС‹Р·С‹РІР°РµРј РґРёР°Р»РѕРі РІС‹Р±РѕСЂР° С„Р°Р№Р»РѕРІ РґР»СЏ РёРјРїРѕСЂС‚Р°
     FilesToOpen = Application.GetOpenFilename _
       (FileFilter:="All files (*.*), *.*", _
       MultiSelect:=True, Title:="Files to Merge")
  
     If TypeName(FilesToOpen) = "Boolean" Then
-        MsgBox "Не выбрано ни одного файла!"
+        MsgBox "РќРµ РІС‹Р±СЂР°РЅРѕ РЅРё РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°!"
         Exit Sub
     End If
      
-    'проходим по всем выбранным файлам
+    'РїСЂРѕС…РѕРґРёРј РїРѕ РІСЃРµРј РІС‹Р±СЂР°РЅРЅС‹Рј С„Р°Р№Р»Р°Рј
     x = 1
     While x <= UBound(FilesToOpen)
         Set importWB = Workbooks.Open(Filename:=FilesToOpen(x))
@@ -659,13 +659,13 @@ Sub CombineWorkbooks()
     Application.ScreenUpdating = True
 End Sub
 
-Sub Собрать_csv_файлы()
-    ' Макрос копирует все csv файлы из заданной папки в один
+Sub РЎРѕР±СЂР°С‚СЊ_csv_С„Р°Р№Р»С‹()
+    ' РњР°РєСЂРѕСЃ РєРѕРїРёСЂСѓРµС‚ РІСЃРµ csv С„Р°Р№Р»С‹ РёР· Р·Р°РґР°РЅРЅРѕР№ РїР°РїРєРё РІ РѕРґРёРЅ
     Dim TextLine$, MyPath$, MyFileName$, Usl As Boolean
     MyPath = "C:\Users\"
     MyFileName = Dir(MyPath & "*.csv")
     'MkDir "C:\Users\"
-    Open MyPath & "свод\свод1.csv" For Output As #1
+    Open MyPath & "СЃРІРѕРґ\СЃРІРѕРґ1.csv" For Output As #1
     Usl = True
     Do Until MyFileName = ""
         Open MyPath & MyFileName For Input Lock Read As #2
